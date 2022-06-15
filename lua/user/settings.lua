@@ -7,6 +7,8 @@ vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
 pcall(require, "profile")
 
+
+
 --go debug settings
 require('dap-go').setup()
 require("nvim-dap-virtual-text").setup {

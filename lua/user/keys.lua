@@ -26,4 +26,13 @@ lvim.builtin.which_key.mappings["m"] = {
 }
 -- 显示或隐藏调试界面
 lvim.keys.normal_mode["<C-u>"] = "<cmd>lua require'dapui'.toggle()<CR>"
-lvim.keys.normal_mode["K"] = "<cmd>lua require'dapui'.eval()<CR>"
+lvim.keys.normal_mode["<C-k"] = "<cmd>lua require'dapui'.eval()<CR>"
+
+--debug
+lvim.keys.normal_mode["<F4>"] = "<cmd>lua require'dap'.toggle_breakpoint()<cr>"
+lvim.keys.normal_mode["<F5>"] = "<cmd>lua require'dap'.continue()<cr>"
+lvim.keys.normal_mode["<F6>"] = "<cmd>lua require'dap'.run_to_cursor()<cr>"
+lvim.keys.normal_mode["<F9>"] = "<cmd>lua require'dap'.repl.toggle()<cr>"
+lvim.keys.normal_mode["<F10>"] = "<cmd>lua require'dap'.step_over()<cr>"
+lvim.keys.normal_mode["<F11>"] = "<cmd>lua require'dap'.step_into()<cr>"
+lvim.keys.normal_mode["<F12>"] = "<cmd>lua require'dap'.step_out()<cr>"

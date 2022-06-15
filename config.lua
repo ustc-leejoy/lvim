@@ -5,6 +5,14 @@ lvim.transparent_window = true
 lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.colorscheme = "gruvbox"
+-- lunarvim的可选配置
+-- vim.opt.backup = true
+vim.opt.tabstop = 4
+vim.opt.mouse = "a"
+-- vim.opt.showtabline = 4
+vim.opt.shiftwidth = 4
+-- vim.opt.cmdheight = 4 w
+-- "
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -58,7 +66,7 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
-lvim.builtin.nvimtree.show_icons.git = 0
+-- lvim.builtin.nvimtree.show_icons.git = 0
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -148,12 +156,3 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- lvim.autocommands.custom_groups = {
 --   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
 -- }
-
--- lunarvim的可选配置
--- vim.opt.backup = true
-vim.opt.tabstop = 4
-vim.opt.mouse = "a"
--- vim.opt.showtabline = 4
-vim.opt.shiftwidth = 4
--- vim.opt.cmdheight = 4 w
--- "

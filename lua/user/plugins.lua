@@ -1,10 +1,9 @@
 -- Additional Plugins
 -- 新增插件集合
 lvim.plugins = {
+    { "lilydjwg/fcitx.vim" }, --Esc自动切换输入法为英文
     { "leoluz/nvim-dap-go" },
-    -- { "beauwilliams/focus.nvim",
-    --     setup = function() require("focus").setup() end, },
-    -- { "hrsh7th/cmp-cmdline" }, --命令行模式自动补全
+    { "hrsh7th/cmp-cmdline" }, --命令行模式自动补全
     { "Pocco81/DAPInstall" },
     { "theHamsta/nvim-dap-virtual-text" },
     { "rcarriga/nvim-dap-ui" },
