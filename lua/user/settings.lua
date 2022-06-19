@@ -7,7 +7,23 @@ vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
 pcall(require, "profile")
 
+-- org settings
+require('orgmode').setup_ts_grammar()
 
+-- Tree-sitter configuration
+require 'nvim-treesitter.configs'.setup {
+    -- If TS highlights are not enabled at all, or disabled via `disable` prop, highlighting will fallback to default Vim syntax highlighting
+    highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = { 'org' }, -- Required for spellcheck, some LaTex highlights and code block highlights that do not have ts grammar
+    },
+    ensure_installed = { 'org' }, -- Or run :TSUpdate org
+}
+
+require('orgmode').setup({
+    org_agenda_files = { '~/Dropbox/org/*', '~/my-orgs/**/*' },
+    org_default_notes_file = '~/Dropbox/org/refile.org',
+})
 
 --go debug settings
 require('dap-go').setup()
@@ -39,25 +55,28 @@ require("dapui").setup({
     -- Expand lines larger than the window
     -- Requires >= 0.7
     expand_lines = vim.fn.has("nvim-0.7"),
-    sidebar = {
+    layouts = {
         -- You can change the order of elements in the sidebar
-        elements = {
-            -- Provide as ID strings or tables with "id" and "size" keys
-            {
-                id = "scopes",
-                size = 0.25, -- Can be float or integer > 1
+        {
+            elements = {
+                -- Provide as ID strings or tables with "id" and "size" keys
+                {
+                    id = "scopes",
+                    size = 0.25, -- Can be float or integer > 1
+                },
+                { id = "breakpoints", size = 0.25 },
+                { id = "stacks", size = 0.25 },
+                { id = "watches", size = 00.25 },
             },
-            { id = "breakpoints", size = 0.25 },
-            { id = "stacks", size = 0.25 },
-            { id = "watches", size = 00.25 },
+            size = 40,
+            position = "left", -- Can be "left", "right", "top", "bottom"
         },
-        size = 40,
-        position = "left", -- Can be "left", "right", "top", "bottom"
-    },
-    tray = {
-        elements = { "repl" },
-        size = 10,
-        position = "bottom", -- Can be "left", "right", "top", "bottom"
+        {
+            elements = { "repl" },
+            size = 10,
+            position = "bottom", -- Can be "left", "right", "top", "bottom"
+
+        }
     },
     floating = {
         max_height = nil, -- These can be integers or a float between 0 and 1.

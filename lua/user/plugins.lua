@@ -1,6 +1,9 @@
 -- Additional Plugins
 -- 新增插件集合
 lvim.plugins = {
+    { 'nvim-orgmode/orgmode', config = function()
+        require('orgmode').setup {}
+    end },
     { "lilydjwg/fcitx.vim" }, --Esc自动切换输入法为英文
     { "leoluz/nvim-dap-go" },
     { "hrsh7th/cmp-cmdline" }, --命令行模式自动补全
