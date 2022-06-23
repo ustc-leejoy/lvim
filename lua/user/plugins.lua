@@ -1,6 +1,11 @@
 -- Additional Plugins
 -- 新增插件集合
 lvim.plugins = {
+    { 'rust-lang/rust.vim' },
+    { 'github/copilot.vim' },
+    { 'tyru/open-browser.vim', ft = { 'plantuml' }, event = 'BufEnter' },
+    -- { 'sheerun/vim-polyglot', ft = { 'plantuml', 'markdown' } },
+    { 'weirongxu/plantuml-previewer.vim', ft = { 'plantuml' }, event = 'BufEnter' },
     { 'nvim-orgmode/orgmode', config = function()
         require('orgmode').setup {}
     end },
