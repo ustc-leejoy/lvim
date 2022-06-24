@@ -36,7 +36,3 @@ lvim.keys.normal_mode["<F9>"] = "<cmd>lua require'dap'.repl.toggle()<cr>"
 lvim.keys.normal_mode["<F10>"] = "<cmd>lua require'dap'.step_over()<cr>"
 lvim.keys.normal_mode["<F11>"] = "<cmd>lua require'dap'.step_into()<cr>"
 lvim.keys.normal_mode["<F12>"] = "<cmd>lua require'dap'.step_out()<cr>"
-
--- Can not be placed into the config method of the plugins.
-lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
-table.insert(lvim.builtin.cmp.sources, 1, { name = "copilot" })

@@ -89,7 +89,7 @@ lvim.plugins = {
     },
 
     { 'rust-lang/rust.vim' },
-    { 'github/copilot.vim' },
+    -- { 'github/copilot.vim' },
     { 'tyru/open-browser.vim', ft = { 'plantuml' }, event = 'BufEnter' },
     -- { 'sheerun/vim-polyglot', ft = { 'plantuml', 'markdown' } },
     { 'weirongxu/plantuml-previewer.vim', ft = { 'plantuml' }, event = 'BufEnter' },
