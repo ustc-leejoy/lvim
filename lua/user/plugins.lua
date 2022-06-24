@@ -25,12 +25,12 @@ lvim.plugins = {
         cmd = "Codi",
     },
 
-    -- hint when you type
-    {
-        "ray-x/lsp_signature.nvim",
-        event = "BufRead",
-        config = function() require "lsp_signature".on_attach() end,
-    },
+    -- -- hint when you type
+    -- {
+    --     "ray-x/lsp_signature.nvim",
+    --     event = "BufRead",
+    --     config = function() require "lsp_signature".on_attach() end,
+    -- },
 
     -- cwd to the project's root directory
     {
