@@ -32,14 +32,14 @@ lvim.plugins = {
     --     config = function() require "lsp_signature".on_attach() end,
     -- },
 
-    -- cwd to the project's root directory
-    {
-        "ahmedkhalf/lsp-rooter.nvim",
-        event = "BufRead",
-        config = function()
-            require("lsp-rooter").setup()
-        end,
-    },
+    -- -- cwd to the project's root directory
+    -- {
+    --     "ahmedkhalf/lsp-rooter.nvim",
+    --     event = "BufRead",
+    --     config = function()
+    --         require("lsp-rooter").setup()
+    --     end,
+    -- },
 
     -- previewing goto definition calls
     {

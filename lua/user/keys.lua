@@ -6,7 +6,7 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- Whichkey
 -- 终端插件floaterm快捷键
 lvim.builtin.which_key.mappings["o"] = {
-    name = "+terminal",
+    name = "+open",
     a = { "<cmd>FloatermNew --wintype=popup --height=6<cr>", "terminal" },
     f = { "<cmd>FloatermNew fzf<cr>", "fzf" },
     g = { "<cmd>FloatermNew lazygit<cr>", "lazygit" },
