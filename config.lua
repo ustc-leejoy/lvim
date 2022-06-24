@@ -12,38 +12,14 @@ vim.opt.mouse = "a"
 -- vim.opt.showtabline = 4
 vim.opt.shiftwidth = 4
 -- vim.opt.cmdheight = 4 w
--- "
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
-
--- add your own keymapping
 
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = false
 -- edit a default keymapping
 -- lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
-require "user.keys"
-require "user.plugins"
-require "user.settings"
 
--- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
--- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
--- local _, actions = pcall(require, "telescope.actions")
--- lvim.builtin.telescope.defaults.mappings = {
---   -- for input mode
---   i = {
---     ["<C-j>"] = actions.move_selection_next,
---     ["<C-k>"] = actions.move_selection_previous,
---     ["<C-n>"] = actions.cycle_history_next,
---     ["<C-p>"] = actions.cycle_history_prev,
---   },
---   -- for normal mode
---   n = {
---     ["<C-j>"] = actions.move_selection_next,
---     ["<C-k>"] = actions.move_selection_previous,
---   },
--- }
--- require "user.mydapui-- Use which-key to add extra bindings with the leader-key prefix
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 -- lvim.builtin.which_key.mappings["t"] = {
 --   name = "+Trouble",
@@ -88,6 +64,28 @@ lvim.builtin.treesitter.ensure_installed = {
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
+require "user.keys"
+require "user.plugins"
+require "user.settings"
+
+-- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
+-- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
+-- local _, actions = pcall(require, "telescope.actions")
+-- lvim.builtin.telescope.defaults.mappings = {
+--   -- for input mode
+--   i = {
+--     ["<C-j>"] = actions.move_selection_next,
+--     ["<C-k>"] = actions.move_selection_previous,
+--     ["<C-n>"] = actions.cycle_history_next,
+--     ["<C-p>"] = actions.cycle_history_prev,
+--   },
+--   -- for normal mode
+--   n = {
+--     ["<C-j>"] = actions.move_selection_next,
+--     ["<C-k>"] = actions.move_selection_previous,
+--   },
+-- }
+-- require "user.mydapui-- Use which-key to add extra bindings with the leader-key prefix
 -- generic LSP settings
 
 -- ---@usage disable automatic installation of servers

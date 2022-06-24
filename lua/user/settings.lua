@@ -7,23 +7,23 @@ vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
 pcall(require, "profile")
 
--- org settings
-require('orgmode').setup_ts_grammar()
+-- -- org settings
+-- require('orgmode').setup_ts_grammar()
 
--- Tree-sitter configuration
-require 'nvim-treesitter.configs'.setup {
-    -- If TS highlights are not enabled at all, or disabled via `disable` prop, highlighting will fallback to default Vim syntax highlighting
-    highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = { 'org' }, -- Required for spellcheck, some LaTex highlights and code block highlights that do not have ts grammar
-    },
-    ensure_installed = { 'org' }, -- Or run :TSUpdate org
-}
+-- -- Tree-sitter configuration
+-- require 'nvim-treesitter.configs'.setup {
+--     -- If TS highlights are not enabled at all, or disabled via `disable` prop, highlighting will fallback to default Vim syntax highlighting
+--     highlight = {
+--         enable = true,
+--         additional_vim_regex_highlighting = { 'org' }, -- Required for spellcheck, some LaTex highlights and code block highlights that do not have ts grammar
+--     },
+--     ensure_installed = { 'org' }, -- Or run :TSUpdate org
+-- }
 
-require('orgmode').setup({
-    org_agenda_files = { '~/Dropbox/org/*', '~/my-orgs/**/*' },
-    org_default_notes_file = '~/Dropbox/org/refile.org',
-})
+-- require('orgmode').setup({
+--     org_agenda_files = { '~/Dropbox/org/*', '~/my-orgs/**/*' },
+--     org_default_notes_file = '~/Dropbox/org/refile.org',
+-- })
 
 --go debug settings
 require('dap-go').setup()
@@ -127,4 +127,19 @@ cmp.setup.cmdline(':', {
     }, {
         { name = 'cmdline' }
     })
+})
+
+-- tabnine setting
+local tabnine = require('cmp_tabnine.config')
+tabnine:setup({
+    max_lines = 1000;
+    max_num_results = 20;
+    sort = true;
+    run_on_every_keystroke = true;
+    snippet_placeholder = '..';
+    ignored_file_types = { -- default is not to ignore
+        -- uncomment to ignore in lua:
+        -- lua = true
+    };
+    show_prediction_strength = false;
 })
