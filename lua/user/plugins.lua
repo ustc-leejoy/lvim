@@ -1,6 +1,26 @@
 -- Additional Plugins
 -- 新增插件集合
 lvim.plugins = {
+    -- 交互式测试框架neotest
+    {
+        "nvim-neotest/neotest",
+        requires = {
+            "nvim-neotest/neotest-python",
+            "nvim-neotest/neotest-go",
+            "nvim-lua/plenary.nvim",
+            "nvim-treesitter/nvim-treesitter",
+            "antoinemadec/FixCursorHold.nvim"
+        },
+        config = function()
+            -- require("neotest").output.open({ enter = true })
+            require "neotest".setup({
+                adapters = {
+                    require('neotest-go'),
+                    require('neotest-python'),
+                }
+            })
+        end
+    },
     -- next generation note-taking
     { "oberblastmeister/neuron.nvim" },
 

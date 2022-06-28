@@ -6,6 +6,18 @@ lvim.debug = true
 -- vim.cmd [[set iskeyword+=-]]
 -- pcall(require, "profile")
 
+-- -- neotest condig
+-- require("neotest").setup({
+--     adapters = {
+--         require("neotest-python")({
+--             dap = { justMyCode = false },
+--         }),
+--         require("neotest-go"),
+--         --     require("neotest-vim-test")({
+--         --         ignore_file_types = { "go", "python", "vim", "lua" },
+--         --     }),
+--     },
+-- })
 -- lsp_signature settings
 -- local cfg = {
 --     debug = false, -- set to true to enable debug logging
