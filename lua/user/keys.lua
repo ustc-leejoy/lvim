@@ -2,7 +2,15 @@
 lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
-
+-- neotest快捷键
+lvim.builtin.which_key.mappings["n"] = {
+    name = "neotest",
+    n = { "<cmd>lua require'neotest'.run.run()<cr>", "nearest test" },
+    f = { "<cmd>lua require'neotest'.run.run(vim.fn.expand('%'))<cr>", "current file" },
+    d = { "<cmd>lua require'neotest'.run.run({strategy = 'dap'})<cr>", "debug nearest test" },
+    s = { "<cmd>lua require'neotest'.run.run(vim.fn.getcwd())<cr>", "suite" },
+    a = { "<cmd>lua require'neotest'.run.attach()<cr>", "attach nearest test" },
+}
 -- Whichkey
 -- 终端插件floaterm快捷键
 lvim.builtin.which_key.mappings["o"] = {

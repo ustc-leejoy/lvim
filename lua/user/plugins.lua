@@ -1,6 +1,13 @@
 -- Additional Plugins
 -- 新增插件集合
 lvim.plugins = {
+    -- python dap 配置dap-python
+    { "mfussenegger/nvim-dap-python",
+        config = function()
+            require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
+        end
+    },
+
     -- 交互式测试框架neotest
     {
         "nvim-neotest/neotest",
