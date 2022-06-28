@@ -26,11 +26,11 @@ lvim.plugins = {
     },
 
     -- -- hint when you type
-    -- {
-    --     "ray-x/lsp_signature.nvim",
-    --     event = "BufRead",
-    --     config = function() require "lsp_signature".on_attach() end,
-    -- },
+    {
+        "ray-x/lsp_signature.nvim",
+        event = "BufRead",
+        config = function() require "lsp_signature".on_attach() end,
+    },
 
     -- -- cwd to the project's root directory
     -- {

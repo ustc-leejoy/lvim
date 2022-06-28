@@ -1,5 +1,36 @@
 -- general
 
+-- clangd settings
+vim.api.nvim = {
+    { "FileType", "c,cpp", "setlocal ts=4 sw=4" },
+}
+
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "clangd" })
+
+local clangd_flags = {
+    "--fallback-style=google",
+    "--background-index",
+    "-j=12",
+    "--all-scopes-completion",
+    "--pch-storage=disk",
+    "--clang-tidy",
+    "--log=error",
+    "--completion-style=detailed",
+    "--header-insertion=iwyu",
+    "--header-insertion-decorators",
+    "--enable-config",
+    "--offset-encoding=utf-16",
+    "--ranking-model=heuristics",
+    "--folding-ranges",
+}
+
+local clangd_bin = "clangd"
+
+local opts = {
+    cmd = { clangd_bin, unpack(clangd_flags) },
+}
+require("lvim.lsp.manager").setup("clangd", opts)
+
 -- 终端透明
 lvim.transparent_window = true
 lvim.log.level = "warn"
@@ -93,9 +124,10 @@ require "user.settings"
 
 -- ---configure a server manually. !!Requires `:LvimCacheReset` to take effect!!
 -- ---see the full default list `:lua print(vim.inspect(lvim.lsp.automatic_configuration.skipped_servers))`
--- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
--- local opts = {} -- check the lspconfig documentation for a list of all possible options
--- require("lvim.lsp.manager").setup("pyright", opts)
+-- 禁用pyright, 启用pylsp
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
+local pyopts = {} -- check the lspconfig documentation for a list of all possible options
+require("lvim.lsp.manager").setup("pylsp", pyopts)
 
 -- ---remove a server from the skipped list, e.g. eslint, or emmet_ls. !!Requires `:LvimCacheReset` to take effect!!
 -- ---`:LvimInfo` lists which server(s) are skiipped for the current filetype
