@@ -33,20 +33,20 @@ lvim.plugins = {
     -- next generation note-taking
     { "oberblastmeister/neuron.nvim" },
 
-    { "zbirenbaum/copilot.lua",
-        event = { "VimEnter" },
-        config = function()
-            vim.defer_fn(function()
-                require("copilot").setup {
-                    plugin_manager_path = get_runtime_dir() .. "/site/pack/packer",
-                }
-            end, 100)
-        end,
-    },
+    -- { "zbirenbaum/copilot.lua",
+    --     event = { "VimEnter" },
+    --     config = function()
+    --         vim.defer_fn(function()
+    --             require("copilot").setup {
+    --                 plugin_manager_path = get_runtime_dir() .. "/site/pack/packer",
+    --             }
+    --         end, 100)
+    --     end,
+    -- },
 
-    { "zbirenbaum/copilot-cmp",
-        after = { "copilot.lua", "nvim-cmp" },
-    },
+    -- { "zbirenbaum/copilot-cmp",
+    --     after = { "copilot.lua", "nvim-cmp" },
+    -- },
 
     -- interactive scratchpad for hackers
     {
