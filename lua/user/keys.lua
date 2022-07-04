@@ -2,6 +2,7 @@
 lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
+
 -- neotest快捷键
 lvim.builtin.which_key.mappings["n"] = {
     name = "neotest",
@@ -22,19 +23,25 @@ lvim.builtin.which_key.mappings["o"] = {
     n = { "<cmd>FloatermNew node<cr>", "node" },
     N = { "<cmd>FloatermNew nnn<cr>", "nnn" },
     p = { "<cmd>FloatermNew python<cr>", "python" },
-    r = { "<cmd>RnvimrToggle<cr>", "ranger" },
+    r = { "<cmd>FloatermNew ranger<cr>", "ranger" },
     t = { "<cmd>FloatermToggle<cr>", "toggle" },
     y = { "<cmd>FloatermNew ytop<cr>", "ytop" },
     s = { "<cmd>FloatermNew ncdu<cr>", "ncdu" },
 }
 --翻译插件Translate快捷键
-lvim.builtin.which_key.mappings["m"] = {
+lvim.keys.visual_mode["<C-v>"] = ":TranslateWV<cr>"
+-- lvim.keys.normal_mode["<C-i>"] = ":TranslateW<cr>"
+-- lvim.keys.normal_mode["<C-r>"] = "<cmd>Translate rep<cr>"
+lvim.builtin.which_key.mappings["F"] = {
     name = "+Translate",
-    er = { ":Translate EN -source=ZH -output=replace<CR>", "replaceInEnglish" },
+    w = { ":TranslateW<cr>", "window" },
+    l = { ":Translate<cr>", "cmdline" },
+    r = { ":TranslateR<cr>", "replace" },
+    c = { ":TranslateX", "clipboard" },
 }
+
 -- 显示或隐藏调试界面
-lvim.keys.normal_mode["<C-u>"] = "<cmd>lua require'dapui'.toggle()<CR>"
-lvim.keys.normal_mode["<C-k"] = "<cmd>lua require'dapui'.eval()<CR>"
+lvim.keys.normal_mode["<C-u>"] = "<cmd>lua require'dapui'.toggle()<cr>"
 
 --debug
 lvim.keys.normal_mode["<F4>"] = "<cmd>lua require'dap'.toggle_breakpoint()<cr>"
@@ -44,3 +51,4 @@ lvim.keys.normal_mode["<F9>"] = "<cmd>lua require'dap'.repl.toggle()<cr>"
 lvim.keys.normal_mode["<F10>"] = "<cmd>lua require'dap'.step_over()<cr>"
 lvim.keys.normal_mode["<F11>"] = "<cmd>lua require'dap'.step_into()<cr>"
 lvim.keys.normal_mode["<F12>"] = "<cmd>lua require'dap'.step_out()<cr>"
+lvim.keys.normal_mode["<C-k>"] = "<cmd>lua require'dapui'.eval()<cr>"

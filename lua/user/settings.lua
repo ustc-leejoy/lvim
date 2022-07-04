@@ -6,18 +6,6 @@ lvim.debug = true
 -- vim.cmd [[set iskeyword+=-]]
 -- pcall(require, "profile")
 
--- -- neotest condig
--- require("neotest").setup({
---     adapters = {
---         require("neotest-python")({
---             dap = { justMyCode = false },
---         }),
---         require("neotest-go"),
---         --     require("neotest-vim-test")({
---         --         ignore_file_types = { "go", "python", "vim", "lua" },
---         --     }),
---     },
--- })
 -- lsp_signature settings
 -- local cfg = {
 --     debug = false, -- set to true to enable debug logging
@@ -94,8 +82,8 @@ lvim.debug = true
 --     org_default_notes_file = '~/Dropbox/org/refile.org',
 -- })
 -- Can not be placed into the config method of the plugins.
-lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
-table.insert(lvim.builtin.cmp.sources, 1, { name = "copilot" })
+-- lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
+-- table.insert(lvim.builtin.cmp.sources, 1, { name = "copilot" })
 
 --go debug settings
 require('dap-go').setup()

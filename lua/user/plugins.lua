@@ -1,6 +1,8 @@
 -- Additional Plugins
 -- 新增插件集合
 lvim.plugins = {
+    -- 翻译插件
+    { "voldikss/vim-translator" },
     -- python dap 配置dap-python
     { "mfussenegger/nvim-dap-python",
         config = function()
@@ -22,7 +24,7 @@ lvim.plugins = {
             -- require("neotest").output.open({ enter = true })
             require "neotest".setup({
                 adapters = {
-                    require('neotest-go'),
+                    -- require('neotest-go'),
                     require('neotest-python'),
                 }
             })
@@ -31,20 +33,20 @@ lvim.plugins = {
     -- next generation note-taking
     { "oberblastmeister/neuron.nvim" },
 
-    { "zbirenbaum/copilot.lua",
-        event = { "VimEnter" },
-        config = function()
-            vim.defer_fn(function()
-                require("copilot").setup {
-                    plugin_manager_path = get_runtime_dir() .. "/site/pack/packer",
-                }
-            end, 100)
-        end,
-    },
+    -- { "zbirenbaum/copilot.lua",
+    --     event = { "VimEnter" },
+    --     config = function()
+    --         vim.defer_fn(function()
+    --             require("copilot").setup {
+    --                 plugin_manager_path = get_runtime_dir() .. "/site/pack/packer",
+    --             }
+    --         end, 100)
+    --     end,
+    -- },
 
-    { "zbirenbaum/copilot-cmp",
-        after = { "copilot.lua", "nvim-cmp" },
-    },
+    -- { "zbirenbaum/copilot-cmp",
+    --     after = { "copilot.lua", "nvim-cmp" },
+    -- },
 
     -- interactive scratchpad for hackers
     {
@@ -52,7 +54,7 @@ lvim.plugins = {
         cmd = "Codi",
     },
 
-    -- -- hint when you type
+    -- hint when you type
     {
         "ray-x/lsp_signature.nvim",
         event = "BufRead",
