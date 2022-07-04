@@ -2,6 +2,16 @@
 lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
+-- vim-go mappings
+lvim.builtin.which_key.mappings["v"] = {
+    name = "+vim-go",
+    r = { "<cmd>GoRun<cr>", "GoRun" },
+    d = { "<cmd>GoDoc<cr>", "GoDoc" },
+    e = { "<cmd>GoIfErr<cr>", "GoIfErr" },
+    t = { "<cmd>GoTest<cr>", "GoTest" },
+    T = { "<cmd>GoTestFunc<cr>", "GoTestFunc" },
+    i = { "<cmd>GoImpl<cr>", "GoImpl" },
+}
 
 -- neotest快捷键
 lvim.builtin.which_key.mappings["n"] = {
