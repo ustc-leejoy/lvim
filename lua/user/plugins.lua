@@ -1,6 +1,7 @@
 -- Additional Plugins
 -- 新增插件集合
 lvim.plugins = {
+    { 'simrat39/symbols-outline.nvim' },
     -- 翻译插件
     { "voldikss/vim-translator" },
     -- python dap 配置dap-python
