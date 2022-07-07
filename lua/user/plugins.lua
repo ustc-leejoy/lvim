@@ -1,7 +1,8 @@
 -- Additional Plugins
 -- 新增插件集合
 lvim.plugins = {
-    { 'simrat39/symbols-outline.nvim' },
+    { "sebdah/vim-delve" },
+    { "simrat39/symbols-outline.nvim" },
     -- 翻译插件
     { "voldikss/vim-translator" },
     -- python dap 配置dap-python
@@ -62,15 +63,6 @@ lvim.plugins = {
         config = function() require "lsp_signature".on_attach() end,
     },
 
-    -- -- cwd to the project's root directory
-    -- {
-    --     "ahmedkhalf/lsp-rooter.nvim",
-    --     event = "BufRead",
-    --     config = function()
-    --         require("lsp-rooter").setup()
-    --     end,
-    -- },
-
     -- previewing goto definition calls
     {
         "rmagatti/goto-preview",
@@ -129,7 +121,10 @@ lvim.plugins = {
     { "lilydjwg/fcitx.vim" }, --Esc自动切换输入法为英文
     { "leoluz/nvim-dap-go" },
     { "hrsh7th/cmp-cmdline" }, --命令行模式自动补全
-    { "Pocco81/DAPInstall" },
+    { "Pocco81/DAPInstall",
+        branch = "dev",
+    },
+
     { "theHamsta/nvim-dap-virtual-text" },
     { "rcarriga/nvim-dap-ui" },
     { "nvim-telescope/telescope-dap.nvim" },

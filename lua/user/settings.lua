@@ -139,8 +139,6 @@ vim.g.symbols_outline = {
 -- lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
 -- table.insert(lvim.builtin.cmp.sources, 1, { name = "copilot" })
 
---go debug settings
-require('dap-go').setup()
 require("nvim-dap-virtual-text").setup {
     enabled = true, -- enable this plugin (the default)
     enabled_commands = true, -- create commands DapVirtualTextEnable, DapVirtualTextDisable, DapVirtualTextToggle, (DapVirtualTextForceRefresh for refreshing when debug adapter did not notify its termination)
@@ -205,6 +203,7 @@ require("dapui").setup({
         max_type_length = nil, -- Can be integer or nil.
     }
 })
+
 local dap = require('dap')
 local dapui = require('dapui')
 -- 如果开启或关闭调试，则自动打开或关闭调试界面
